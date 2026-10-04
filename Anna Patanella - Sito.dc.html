@@ -74,9 +74,17 @@ input,textarea,button{font:inherit;color:inherit}
 ::selection{background:#D8DFD0}
 @keyframes apIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes apSpin{to{transform:rotate(360deg)}}
+@keyframes apBreathe{from{transform:translate3d(0,0,0) scale(.86);opacity:.55}to{transform:translate3d(3vw,-2vh,0) scale(1.14);opacity:1}}
+@keyframes apMorph{0%,100%{border-radius:48% 48% 44% 12% / 50% 50% 50% 14%}33%{border-radius:56% 42% 50% 18% / 44% 56% 42% 22%}66%{border-radius:42% 56% 38% 14% / 56% 44% 52% 16%}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
 </helmet>
+
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden">
+  <span style="position:absolute;left:-20vmax;top:-18vmax;width:72vmax;height:72vmax;border-radius:50%;background:radial-gradient(circle,rgba(222,233,217,0.9) 0%,rgba(222,233,217,0) 65%);will-change:transform;animation:apBreathe 26s ease-in-out infinite alternate"></span>
+  <span style="position:absolute;right:-24vmax;top:28vh;width:80vmax;height:80vmax;border-radius:50%;background:radial-gradient(circle,rgba(201,214,198,0.45) 0%,rgba(201,214,198,0) 62%);will-change:transform;animation:apBreathe 34s -11s ease-in-out infinite alternate-reverse"></span>
+  <span style="position:absolute;left:10vw;bottom:-30vmax;width:66vmax;height:66vmax;border-radius:50%;background:radial-gradient(circle,rgba(234,240,232,0.95) 0%,rgba(234,240,232,0) 66%);will-change:transform;animation:apBreathe 29s -7s ease-in-out infinite alternate"></span>
+</div>
 
 <a href="#contenuto" style="position:absolute;left:-9999px;top:8px;z-index:100;background:#24231E;color:#FAF7F1;padding:10px 16px;border-radius:4px;text-decoration:none" style-focus="left:16px">Vai al contenuto</a>
 
@@ -94,12 +102,12 @@ input,textarea,button{font:inherit;color:inherit}
           <li><a href="#primo-colloquio" style="color:#24231E;text-decoration:none;padding:8px 0" style-hover="color:#426B5B">Primo colloquio</a></li>
           <li><a href="#contatti" style="color:#24231E;text-decoration:none;padding:8px 0" style-hover="color:#426B5B">Contatti</a></li>
         </ul>
-        <a href="#modulo" onMouseEnter="{{ hv.hdr.on }}" onMouseLeave="{{ hv.hdr.off }}" onFocus="{{ hv.hdr.on }}" onBlur="{{ hv.hdr.off }}" style="position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;padding:0 6px 0 20px;border-radius:999px;border:1px solid #315D50;background:#315D50;color:#FAF7F1;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:0.01em">
-          <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#24231E;border-radius:999px;transform-origin:100% 50%;transform:scaleX({{ hv.hdr.fill }});transition:transform .55s cubic-bezier(.7,0,.2,1)"></span>
+        <a href="#modulo" data-magnet onMouseEnter="{{ hv.hdr.on }}" onMouseLeave="{{ hv.hdr.off }}" onFocus="{{ hv.hdr.on }}" onBlur="{{ hv.hdr.off }}" style="position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;padding:0 6px 0 20px;border-radius:999px;border:1px solid #315D50;background:#315D50;color:#FAF7F1;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:0.01em;transform:translate(var(--mx,0px),var(--my,0px));transition:transform .5s cubic-bezier(.2,.8,.2,1)">
+          <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#24231E;border-radius:999px;transform-origin:var(--fx,100%) 50%;transform:scaleX({{ hv.hdr.fill }});transition:transform .55s cubic-bezier(.7,0,.2,1)"></span>
           <span style="display:block;height:1.3em;line-height:1.3;overflow:hidden">
             <span style="display:flex;flex-direction:column;transform:translateY({{ hv.hdr.y }});transition:transform .55s cubic-bezier(.7,0,.2,1)"><span>Richiedi un primo colloquio</span><span aria-hidden="true">Richiedi un primo colloquio</span></span>
           </span>
-          <span aria-hidden="true" style="width:34px;height:34px;border-radius:999px;background:#DEE9D9;color:#203F36;display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <span aria-hidden="true" style="width:34px;height:34px;border-radius:999px;background:#DEE9D9;color:#203F36;display:flex;align-items:center;justify-content:center;overflow:hidden;transform:translate(var(--ax,0px),var(--ay,0px));transition:transform .5s cubic-bezier(.2,.8,.2,1)">
             <span style="display:block;font-size:16px;line-height:1;transform:rotate({{ hv.hdr.rot }});transition:transform .55s cubic-bezier(.7,0,.2,1)">→</span>
           </span>
         </a>
@@ -140,12 +148,12 @@ input,textarea,button{font:inherit;color:inherit}
     <p style="font-size:15px;letter-spacing:0.01em;color:#315D50;font-weight:500">Anna Patanella · Psicologa e psicoterapeuta</p>
     <p style="font-size:clamp(17px,1.5vw,19px);line-height:1.7;max-width:29em;color:#5A625B;text-wrap:pretty">Ci sono momenti in cui tutto sembra chiedere troppo. Insieme possiamo dare ascolto a quello che senti e trovare il tuo modo di attraversarli.</p>
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 36px">
-      <a href="#modulo" onMouseEnter="{{ hv.hero.on }}" onMouseLeave="{{ hv.hero.off }}" onFocus="{{ hv.hero.on }}" onBlur="{{ hv.hero.off }}" style="position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:16px;height:60px;padding:0 7px 0 28px;border-radius:999px;background:#315D50;color:#FAF7F1;text-decoration:none;font-size:16px;font-weight:500;letter-spacing:0.005em">
-        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#24231E;border-radius:999px;transform-origin:100% 50%;transform:scaleX({{ hv.hero.fill }});transition:transform .6s cubic-bezier(.7,0,.2,1)"></span>
+      <a href="#modulo" data-magnet onMouseEnter="{{ hv.hero.on }}" onMouseLeave="{{ hv.hero.off }}" onFocus="{{ hv.hero.on }}" onBlur="{{ hv.hero.off }}" style="position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:16px;height:60px;padding:0 7px 0 28px;border-radius:999px;background:#315D50;color:#FAF7F1;text-decoration:none;font-size:16px;font-weight:500;letter-spacing:0.005em;transform:translate(var(--mx,0px),var(--my,0px));transition:transform .5s cubic-bezier(.2,.8,.2,1)">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#24231E;border-radius:999px;transform-origin:var(--fx,100%) 50%;transform:scaleX({{ hv.hero.fill }});transition:transform .6s cubic-bezier(.7,0,.2,1)"></span>
         <span style="display:block;height:1.3em;line-height:1.3;overflow:hidden">
           <span style="display:flex;flex-direction:column;transform:translateY({{ hv.hero.y }});transition:transform .6s cubic-bezier(.7,0,.2,1)"><span>Richiedi un primo colloquio</span><span aria-hidden="true">Richiedi un primo colloquio</span></span>
         </span>
-        <span aria-hidden="true" style="width:46px;height:46px;border-radius:999px;background:#DEE9D9;color:#203F36;display:flex;align-items:center;justify-content:center;transform:scale({{ hv.hero.scale }});transition:transform .6s cubic-bezier(.7,0,.2,1)">
+        <span aria-hidden="true" style="width:46px;height:46px;border-radius:999px;background:#DEE9D9;color:#203F36;display:flex;align-items:center;justify-content:center;transform:translate(var(--ax,0px),var(--ay,0px)) scale({{ hv.hero.scale }});transition:transform .6s cubic-bezier(.2,.8,.2,1)">
           <span style="display:block;font-size:18px;line-height:1;transform:rotate({{ hv.hero.rot }});transition:transform .6s cubic-bezier(.7,0,.2,1)">→</span>
         </span>
       </a>
@@ -158,7 +166,10 @@ input,textarea,button{font:inherit;color:inherit}
     </div>
   </div>
   <figure style="flex:1 1 330px;min-width:0;position:relative;max-width:440px;width:100%;margin:0 auto;animation:apIn .9s .1s ease both">
-    <img src="assets/anna-patanella.jpg" srcset="assets/anna-patanella-450.webp 450w, assets/anna-patanella-900.webp 900w" sizes="(min-width: 960px) 440px, 92vw" width="900" height="1125" alt="Anna Patanella nel suo studio" fetchpriority="high" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:48% 48% 44% 12%;background:#DEE9D9;box-shadow:18px 22px 0 #E0E8DB">
+    <div style="position:relative;isolation:isolate">
+    <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#E0E8DB;transform:translate(18px,22px);border-radius:48% 48% 44% 12%;animation:apMorph 19s -7s ease-in-out infinite"></span>
+    <img src="assets/anna-patanella.jpg" srcset="assets/anna-patanella-450.webp 450w, assets/anna-patanella-900.webp 900w" sizes="(min-width: 960px) 440px, 92vw" width="900" height="1125" alt="Anna Patanella nel suo studio" fetchpriority="high" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:48% 48% 44% 12%;background:#DEE9D9;animation:apMorph 16s ease-in-out infinite">
+    </div>
     <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;margin-top:36px;padding-top:0;font-size:13px;letter-spacing:0.04em;color:#6B665A">
       <span>In studio a Roma e online</span>
       <span>Albo Psicologi Lazio n. 22416</span>
@@ -169,21 +180,24 @@ input,textarea,button{font:inherit;color:inherit}
 
 <section id="percorsi" aria-labelledby="titolo-percorsi" style="scroll-margin-top:96px">
   <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:36px">
-    <div style="display:flex;flex-direction:column;gap:18px;max-width:680px">
+    <div data-reveal style="display:flex;flex-direction:column;gap:18px;max-width:680px">
       <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#426B5B;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">01</span>Come posso aiutarti</p>
       <h2 id="titolo-percorsi" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Da quello che senti,<br><em style="font-style:italic;color:#426B5B">possiamo cominciare.</em></h2>
       <p style="color:#5A564C;text-wrap:pretty">Percorsi individuali, di coppia e di gruppo, in studio o online. Se non ti ritrovi in queste descrizioni, <a href="#modulo">scrivimi comunque</a>.</p>
     </div>
     <ol style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px">
-      <li style="display:flex;flex-direction:column;gap:22px;padding:32px;border:1px solid #DCE3D8;border-radius:24px;background:#EFF3EC;transition:transform .3s,background .3s" style-hover="transform:translateY(-5px);background:#E6EDE1">
+      <li data-glow data-reveal="0" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:22px;padding:32px;border:1px solid #DCE3D8;border-radius:24px;background-color:#EFF3EC;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .45s cubic-bezier(.2,.8,.2,1),background-color .3s" style-hover="background-color:#E6EDE1">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(340px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,0.9),rgba(222,233,217,0.45) 38%,rgba(222,233,217,0) 70%);opacity:var(--go,0);transition:opacity .5s ease"></span>
         <span aria-hidden="true" style="width:42px;height:42px;border:1px solid #C9D6C6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#426B5B;font-size:13px">01</span><h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Ansia e stress</h3>
         <p style="color:#3A3830;text-wrap:pretty">Preoccupazioni che non si fermano, tensione nel corpo, sonno disturbato, ritmi che non lasciano respiro. Cerchiamo di capire da dove nasce questa fatica e come renderla più gestibile.</p>
       <a href="#contatti" style="margin-top:auto;display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:none;color:#315D50">Parliamone insieme ↗</a></li>
-      <li style="display:flex;flex-direction:column;gap:22px;padding:32px;border:1px solid #DCE3D8;border-radius:24px;background:#EFF3EC;transition:transform .3s,background .3s" style-hover="transform:translateY(-5px);background:#E6EDE1">
+      <li data-glow data-reveal="1" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:22px;padding:32px;border:1px solid #DCE3D8;border-radius:24px;background-color:#EFF3EC;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .45s cubic-bezier(.2,.8,.2,1),background-color .3s" style-hover="background-color:#E6EDE1">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(340px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,0.9),rgba(222,233,217,0.45) 38%,rgba(222,233,217,0) 70%);opacity:var(--go,0);transition:opacity .5s ease"></span>
         <span aria-hidden="true" style="width:42px;height:42px;border:1px solid #C9D6C6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#426B5B;font-size:13px">02</span><h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Difficoltà relazionali</h3>
         <p style="color:#3A3830;text-wrap:pretty">Conflitti in coppia o in famiglia che si ripetono sempre uguali, distanze difficili da colmare, la sensazione di essere soli anche in mezzo agli altri.</p>
       <a href="#contatti" style="margin-top:auto;display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:none;color:#315D50">Parliamone insieme ↗</a></li>
-      <li style="display:flex;flex-direction:column;gap:22px;padding:32px;border:1px solid #DCE3D8;border-radius:24px;background:#EFF3EC;transition:transform .3s,background .3s" style-hover="transform:translateY(-5px);background:#E6EDE1">
+      <li data-glow data-reveal="2" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:22px;padding:32px;border:1px solid #DCE3D8;border-radius:24px;background-color:#EFF3EC;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .45s cubic-bezier(.2,.8,.2,1),background-color .3s" style-hover="background-color:#E6EDE1">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(340px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,0.9),rgba(222,233,217,0.45) 38%,rgba(222,233,217,0) 70%);opacity:var(--go,0);transition:opacity .5s ease"></span>
         <span aria-hidden="true" style="width:42px;height:42px;border:1px solid #C9D6C6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#426B5B;font-size:13px">03</span><h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Cambiamenti e lutto</h3>
         <p style="color:#3A3830;text-wrap:pretty">La perdita di una persona cara, la fine di una relazione, un lavoro che cambia. Momenti che chiedono tempo e uno spazio in cui poterli attraversare.</p>
       <a href="#contatti" style="margin-top:auto;display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:none;color:#315D50">Parliamone insieme ↗</a></li>
@@ -191,16 +205,17 @@ input,textarea,button{font:inherit;color:inherit}
   </div>
 </section>
 
-<section id="anna" aria-labelledby="titolo-anna" style="background:#203F36;color:#F3EEE4;scroll-margin-top:96px;border-radius:clamp(28px,5vw,64px);margin:0 clamp(12px,2vw,28px);overflow:hidden">
+<div aria-hidden="true" data-curve style="height:clamp(40px,7vw,112px);background:#203F36;border-radius:50% 50% 0 0 / 100% 100% 0 0;transform-origin:50% 100%;transform:scaleY(var(--cs,1));will-change:transform"></div>
+<section id="anna" aria-labelledby="titolo-anna" style="background:#203F36;color:#F3EEE4;scroll-margin-top:96px;margin-top:-1px">
   <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:clamp(40px,6vw,72px)">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(36px,6vw,88px);align-items:start">
-      <div style="display:flex;flex-direction:column;gap:24px">
+      <div data-reveal style="display:flex;flex-direction:column;gap:24px">
         <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#C3CDB8;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">02</span>Anna e il suo approccio</p>
         <h2 id="titolo-anna" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Mente e corpo, <em style="font-style:italic;color:#C3CDB8">nello stesso percorso</em></h2>
         <p style="color:#E4DED2;text-wrap:pretty">Mi sono laureata in Psicologia alla LUMSA di Roma, dove ho poi frequentato un master in Psicomotricità, e mi sono specializzata in Psicoterapia Funzionale. Prima di accompagnare gli altri ho fatto un lungo percorso personale: è da lì che nasce il mio modo di stare accanto alle persone.</p>
         <p style="color:#E4DED2;text-wrap:pretty">La Psicoterapia Funzionale considera pensieri, emozioni, respiro e postura come parti di un unico organismo. Quando qualcosa non va, lo sentiamo nella testa e nel corpo insieme. Per questo in seduta lavoriamo su entrambi.</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:24px">
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:24px">
         <div style="min-height:280px;border-radius:28px;background:radial-gradient(ellipse at 100% 0%,#56765B,transparent 70%),#304E40;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,4vw,48px);gap:24px;border:1px solid #607C63"><span style="font-size:12px;letter-spacing:0.16em;color:#C3CDB8">IL MIO APPROCCIO</span><p style="font-family:'Newsreader',Georgia,serif;font-size:clamp(32px,4vw,48px);line-height:1.12;font-weight:300">Dare spazio alla parola.<br><em style="color:#D7E5CC">Ascoltare anche il corpo.</em></p><span style="font-size:14px;color:#D9D3C6">Psicoterapia Funzionale</span></div>
         <dl style="display:flex;flex-direction:column;font-size:14px;border-top:1px solid #4A5844">
           <div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid #4A5844"><dt style="color:#AEB9A4">Albo</dt><dd style="color:#F3EEE4">Ordine degli Psicologi del Lazio, n. 22416</dd></div>
@@ -210,17 +225,17 @@ input,textarea,button{font:inherit;color:inherit}
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:32px">
-      <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Cosa succede durante una seduta</h3>
+      <h3 data-reveal style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Cosa succede durante una seduta</h3>
       <ol style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:32px 48px">
-        <li style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
+        <li data-reveal="0" style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
           <p style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:400;line-height:1.25">Si parte dal tuo racconto</p>
           <p style="color:#D9D3C6;text-wrap:pretty">Mi dici cosa stai vivendo, con le parole e i tempi che senti tuoi. Non ci sono domande giuste da cui cominciare.</p>
         </li>
-        <li style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
+        <li data-reveal="1" style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
           <p style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:400;line-height:1.25">Diamo ascolto anche al corpo</p>
           <p style="color:#D9D3C6;text-wrap:pretty">Può capitare di fermarsi sul respiro, su una tensione o sulla postura. Sono proposte, mai obblighi: decidi tu fin dove andare.</p>
         </li>
-        <li style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
+        <li data-reveal="2" style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
           <p style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:400;line-height:1.25">Il percorso si costruisce insieme</p>
           <p style="color:#D9D3C6;text-wrap:pretty">Obiettivi e frequenza si concordano e si verificano strada facendo. Ciò che dici resta protetto dal segreto professionale.</p>
         </li>
@@ -228,31 +243,35 @@ input,textarea,button{font:inherit;color:inherit}
     </div>
   </div>
 </section>
+<div aria-hidden="true" data-curve style="margin-top:-1px;height:clamp(40px,7vw,112px);background:#203F36;border-radius:0 0 50% 50% / 0 0 100% 100%;transform-origin:50% 0%;transform:scaleY(var(--cs,1));will-change:transform"></div>
 
 <section id="primo-colloquio" aria-labelledby="titolo-colloquio" style="scroll-margin-top:96px">
   <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">
-    <div style="display:flex;flex-direction:column;gap:20px;max-width:640px">
+    <div data-reveal style="display:flex;flex-direction:column;gap:20px;max-width:640px">
       <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#426B5B;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">03</span>Il primo colloquio</p>
       <h2 id="titolo-colloquio" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Come iniziare, <em style="font-style:italic;color:#426B5B">in tre passaggi</em></h2>
     </div>
     <ol style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
-      <li style="display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid #DCE3D8;border-radius:24px;background:#FFFFFF">
+      <li data-glow data-reveal="0" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid #DCE3D8;border-radius:24px;background-color:#FFFFFF;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .45s cubic-bezier(.2,.8,.2,1),background-color .3s">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(340px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,0.9),rgba(222,233,217,0.45) 38%,rgba(222,233,217,0) 70%);opacity:var(--go,0);transition:opacity .5s ease"></span>
         <span aria-hidden="true" style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;color:#8C9A82">1</span>
         <p style="font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.2;padding-top:12px;border-top:1px solid #DDD2C0">Mi scrivi</p>
         <p style="color:#3A3830;text-wrap:pretty">Usa il modulo, mandami un messaggio su WhatsApp o chiamami. Bastano poche righe.</p>
       </li>
-      <li style="display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid #DCE3D8;border-radius:24px;background:#FFFFFF">
+      <li data-glow data-reveal="1" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid #DCE3D8;border-radius:24px;background-color:#FFFFFF;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .45s cubic-bezier(.2,.8,.2,1),background-color .3s">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(340px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,0.9),rgba(222,233,217,0.45) 38%,rgba(222,233,217,0) 70%);opacity:var(--go,0);transition:opacity .5s ease"></span>
         <span aria-hidden="true" style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;color:#8C9A82">2</span>
         <p style="font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.2;padding-top:12px;border-top:1px solid #DDD2C0">Ti ricontatto</p>
         <p style="color:#3A3830;text-wrap:pretty">Ti rispondo personalmente per fissare il giorno e scegliere se incontrarci in studio o online.</p>
       </li>
-      <li style="display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid #DCE3D8;border-radius:24px;background:#FFFFFF">
+      <li data-glow data-reveal="2" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid #DCE3D8;border-radius:24px;background-color:#FFFFFF;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .45s cubic-bezier(.2,.8,.2,1),background-color .3s">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:radial-gradient(340px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,0.9),rgba(222,233,217,0.45) 38%,rgba(222,233,217,0) 70%);opacity:var(--go,0);transition:opacity .5s ease"></span>
         <span aria-hidden="true" style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;color:#8C9A82">3</span>
         <p style="font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.2;padding-top:12px;border-top:1px solid #DDD2C0">Ci conosciamo</p>
         <p style="color:#3A3830;text-wrap:pretty">Mi racconti cosa ti porta qui e valutiamo insieme se e come proseguire. Il primo colloquio non ti impegna a continuare.</p>
       </li>
     </ol>
-    <div style="display:flex;flex-wrap:wrap;gap:16px clamp(28px,5vw,80px);padding-top:clamp(8px,2vw,16px)">
+    <div data-reveal style="display:flex;flex-wrap:wrap;gap:16px clamp(28px,5vw,80px);padding-top:clamp(8px,2vw,16px)">
       <h3 style="flex:1 1 300px;max-width:400px;font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Domande frequenti</h3>
       <div style="flex:2 1 480px;min-width:0;border-top:1px solid #DDD2C0">
         <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
@@ -281,9 +300,10 @@ input,textarea,button{font:inherit;color:inherit}
   </div>
 </section>
 
-<section id="contatti" aria-labelledby="titolo-contatti" style="background:#EAF0E8;scroll-margin-top:96px">
+<div aria-hidden="true" data-curve style="height:clamp(40px,7vw,112px);background:#EAF0E8;border-radius:50% 50% 0 0 / 100% 100% 0 0;transform-origin:50% 100%;transform:scaleY(var(--cs,1));will-change:transform"></div>
+<section id="contatti" aria-labelledby="titolo-contatti" style="background:#EAF0E8;scroll-margin-top:96px;margin-top:-1px">
   <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(36px,6vw,88px);align-items:start">
-    <div style="display:flex;flex-direction:column;gap:24px">
+    <div data-reveal style="display:flex;flex-direction:column;gap:24px">
       <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#426B5B;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">04</span>Contatti</p>
       <h2 id="titolo-contatti" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Scrivimi per un <em style="font-style:italic;color:#426B5B">primo colloquio</em></h2>
       <p style="color:#3A3830;text-wrap:pretty">Una breve richiesta basta: come preferisci essere ricontattato, se pensi allo studio o all’online e quando sei disponibile. Ti chiedo di non inserire dettagli personali o clinici nel modulo: ne parleremo a voce.</p>
@@ -296,7 +316,7 @@ input,textarea,button{font:inherit;color:inherit}
       <p style="font-size:14px;color:#5A564C;text-wrap:pretty">Questo sito non è un servizio di emergenza. In caso di urgenza chiama il 112 o rivolgiti al pronto soccorso più vicino.</p>
     </div>
 
-    <div id="modulo" style="background:#FFFFFF;border-radius:28px;padding:clamp(24px,4vw,48px);box-shadow:0 1px 0 #E2D8C6, 0 24px 48px -32px rgba(47,58,44,0.25);scroll-margin-top:96px">
+    <div id="modulo" data-reveal="1" style="background:#FFFFFF;border-radius:28px;padding:clamp(24px,4vw,48px);box-shadow:0 1px 0 #E2D8C6, 0 24px 48px -32px rgba(47,58,44,0.25);scroll-margin-top:96px">
       <div aria-live="polite">
         <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
           <div id="esito-ok" tabindex="-1" style="display:flex;flex-direction:column;gap:16px;padding:16px 0;animation:apIn .4s ease both">
@@ -390,6 +410,145 @@ input,textarea,button{font:inherit;color:inherit}
 </footer>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;formOutcome&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;success&quot;,&quot;error&quot;],&quot;default&quot;:&quot;success&quot;,&quot;tsType&quot;:&quot;'success' | 'error'&quot;,&quot;section&quot;:&quot;Modulo&quot;}}">
+const MOTION = {
+  revealStepMs: 110, revealDurationMs: 900, revealOffsetPx: 28,
+  magnetPull: 0.18, magnetMaxPx: 6, arrowPull: 0.35, arrowMaxPx: 10,
+  tiltMaxDeg: 3, liftPx: -4, curveMinScale: 0.45
+};
+const EASE_OUT = 'cubic-bezier(.2,.8,.2,1)';
+const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
+
+const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+const px = v => v.toFixed(1) + 'px';
+const deg = v => v.toFixed(2) + 'deg';
+
+function setVars(el, vars) {
+  for (const [name, value] of Object.entries(vars)) el.style.setProperty(name, value);
+}
+
+// Esegue fn al massimo una volta per frame, con gli ultimi argomenti ricevuti.
+function rafThrottle(fn) {
+  let frame = 0, lastArgs = [];
+  const throttled = (...args) => {
+    lastArgs = args;
+    if (frame) return;
+    frame = requestAnimationFrame(() => { frame = 0; fn(...lastArgs); });
+  };
+  throttled.cancel = () => cancelAnimationFrame(frame);
+  return throttled;
+}
+
+// Titoli e schede sotto la piega entrano con dissolvenza e leggero sollevamento.
+function setupReveal() {
+  if (typeof IntersectionObserver === 'undefined' || !Element.prototype.animate) return () => {};
+  const pending = new Map();
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      observer.unobserve(entry.target);
+      pending.get(entry.target).play();
+      pending.delete(entry.target);
+    }
+  }, { rootMargin: '0px 0px -8% 0px' });
+  for (const el of document.querySelectorAll('[data-reveal]')) {
+    if (el.getBoundingClientRect().top < window.innerHeight) continue;
+    const step = Number(el.dataset.reveal) || 0;
+    const anim = el.animate(
+      [{ opacity: 0, translate: '0 ' + MOTION.revealOffsetPx + 'px' }, { opacity: 1, translate: '0 0' }],
+      { duration: MOTION.revealDurationMs, delay: step * MOTION.revealStepMs, easing: EASE_OUT, fill: 'backwards' }
+    );
+    anim.pause();
+    pending.set(el, anim);
+    observer.observe(el);
+  }
+  return () => {
+    observer.disconnect();
+    pending.forEach(anim => anim.cancel());
+  };
+}
+
+// Delega il movimento del mouse agli elementi che corrispondono a selector.
+function trackPointer(selector, { move, reset }) {
+  let active = null;
+  const release = () => { if (active) reset(active); active = null; };
+  const update = rafThrottle(e => {
+    const el = e.target instanceof Element ? e.target.closest(selector) : null;
+    if (el !== active) release();
+    if (!el) return;
+    active = el;
+    const r = el.getBoundingClientRect();
+    move(el, { x: e.clientX - r.left, y: e.clientY - r.top, w: r.width, h: r.height });
+  });
+  const onMove = e => { if (e.pointerType === 'mouse') update(e); };
+  const root = document.documentElement;
+  document.addEventListener('pointermove', onMove, { passive: true });
+  root.addEventListener('pointerleave', release);
+  return () => {
+    document.removeEventListener('pointermove', onMove);
+    root.removeEventListener('pointerleave', release);
+    update.cancel();
+    release();
+  };
+}
+
+// Pulsanti magnetici: il pulsante segue appena il cursore, la freccia un po' di più.
+const magnetEffect = {
+  move(el, p) {
+    const dx = p.x - p.w / 2, dy = p.y - p.h / 2;
+    const pull = (d, k, max) => px(clamp(d * k, -max, max));
+    setVars(el, {
+      '--mx': pull(dx, MOTION.magnetPull, MOTION.magnetMaxPx), '--my': pull(dy, MOTION.magnetPull, MOTION.magnetMaxPx),
+      '--ax': pull(dx, MOTION.arrowPull, MOTION.arrowMaxPx), '--ay': pull(dy, MOTION.arrowPull, MOTION.arrowMaxPx),
+      '--fx': clamp(p.x / p.w * 100, 0, 100).toFixed(0) + '%'
+    });
+  },
+  reset(el) {
+    setVars(el, { '--mx': '0px', '--my': '0px', '--ax': '0px', '--ay': '0px' });
+  }
+};
+
+// Schede luminose: alone morbido sotto il cursore e lieve inclinazione 3D.
+const glowEffect = {
+  move(el, p) {
+    const nx = p.x / p.w - 0.5, ny = p.y / p.h - 0.5;
+    setVars(el, {
+      '--gx': px(p.x), '--gy': px(p.y), '--go': '1', '--ty': px(MOTION.liftPx),
+      '--rx': deg(-ny * 2 * MOTION.tiltMaxDeg), '--ry': deg(nx * 2 * MOTION.tiltMaxDeg)
+    });
+  },
+  reset(el) {
+    setVars(el, { '--go': '0', '--ty': '0px', '--rx': '0deg', '--ry': '0deg' });
+  }
+};
+
+// Curve tra le sezioni: si distendono man mano che salgono nella pagina.
+function setupCurves() {
+  const curves = [...document.querySelectorAll('[data-curve]')];
+  if (!curves.length) return () => {};
+  const update = rafThrottle(() => {
+    const vh = window.innerHeight;
+    const tops = curves.map(el => el.getBoundingClientRect().top);
+    curves.forEach((el, i) => {
+      const progress = clamp((vh - tops[i]) / vh, 0, 1);
+      el.style.setProperty('--cs', (1 - progress * (1 - MOTION.curveMinScale)).toFixed(3));
+    });
+  });
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+  return () => {
+    window.removeEventListener('scroll', update);
+    window.removeEventListener('resize', update);
+    update.cancel();
+  };
+}
+
+function startMotionEffects() {
+  if (typeof window === 'undefined' || window.matchMedia(REDUCED_MOTION_QUERY).matches) return () => {};
+  const stops = [setupReveal(), setupCurves(), trackPointer('[data-magnet]', magnetEffect), trackPointer('[data-glow]', glowEffect)];
+  return () => stops.forEach(stop => stop());
+}
+
 class Component extends DCLogic {
   state = {
     w: typeof window !== 'undefined' ? window.innerWidth : 1200,
@@ -402,11 +561,14 @@ class Component extends DCLogic {
     this.onK = e => { if (e.key === 'Escape' && this.state.menu) this.setState({ menu: false }); };
     window.addEventListener('resize', this.onR);
     window.addEventListener('keydown', this.onK);
+    this.stopMotion && this.stopMotion();
+    this.stopMotion = startMotionEffects();
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.onR);
     window.removeEventListener('keydown', this.onK);
     clearTimeout(this.t);
+    this.stopMotion && this.stopMotion();
   }
   hover(k) {
     const on = !!this.state.hov[k];

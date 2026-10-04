@@ -15,6 +15,9 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e il p
 - Foto hero (`assets/anna-patanella.jpg`).
 - Documentazione di progetto (README, LICENSE, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, TODO).
 - `.gitignore` per escludere file generati e contenuti caricati.
+- Animazioni leggere (disattivate con `prefers-reduced-motion`): sfondo salvia che "respira", contorno
+  organico animato della foto, comparsa progressiva allo scroll, schede con alone e lieve inclinazione,
+  curve fluide attorno alla sezione verde scura, pulsanti magnetici.
 
 ### Da completare
 

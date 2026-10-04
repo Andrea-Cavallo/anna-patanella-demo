@@ -37,6 +37,11 @@ Breakpoint unico: `wide = innerWidth >= 960` (menu mobile `#menu-mobile` sotto).
   superfici `#EFF3EC` `#EAF0E8` `#DEE9D9`, bordi `#DCE3D8` `#C9D6C6`, secondario `#5A625B` `#6B665A`,
   footer `#24231E`, errore `#9A3B26`.
 - Pulsanti a pillola (`border-radius:999px`) con freccia → ruotata e riempimento animato (`hover(k)`).
+- Animazioni: keyframes globali `apBreathe` (sfondo fisso), `apMorph` (contorno foto). Effetti JS agganciati
+  ad attributi (funzioni sopra `Component`, avviate da `startMotionEffects()`): `data-reveal="n"` comparsa
+  allo scroll (n = ritardo a gradini), `data-glow` alone + inclinazione (`--gx --gy --go --rx --ry --ty`),
+  `data-magnet` pulsante magnetico (`--mx --my --ax --ay --fx`), `data-curve` curva tra sezioni (`--cs`).
+  Gli effetti scrivono solo custom properties: non usare `transform` negli `style-hover` di questi elementi.
 - Target touch ≥44px: per link testuali usa `display:inline-flex;align-items:center;min-height:44px;margin:-11px 0`
   (area più grande, layout invariato).
 - SEO statica nel `<head>` reale (fuori da `<x-dc>`): canonical, Open Graph, JSON-LD `Person` + `MedicalBusiness`.

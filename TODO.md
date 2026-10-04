@@ -54,8 +54,9 @@ desktop.
       _`aspect-ratio`, `width/height`, `srcset` WebP 450/900w (fallback JPG), preload con `imagesrcset`._
 - [ ] **Modulo ottimizzato mobile** — campi a tutta larghezza, `font-size` ≥16px sugli input, layout
       in colonna, messaggi di errore visibili vicino al campo.
-- [ ] **Animazioni fluide e leggere** — transizioni morbide, rispettando `prefers-reduced-motion`;
+- [x] **Animazioni fluide e leggere** — transizioni morbide, rispettando `prefers-reduced-motion`;
       niente micro-jank o scatti durante lo scroll.
+      _Solo `transform`/`opacity`, eventi throttled con `requestAnimationFrame`, effetti mouse solo con puntatore `mouse`; tutto spento con reduced motion._
 - [x] **Breakpoint intermedi** — oggi c'è un solo breakpoint a 960px: valutare un punto intermedio
       (es. ~640px) per tablet e telefoni grandi.
       _Valutato: a 640px il layout fluido regge, per ora non serve un secondo breakpoint._
