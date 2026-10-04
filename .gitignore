@@ -25,5 +25,8 @@ build/
 # ===== Generati dal tool dc-runtime =====
 .thumbnail
 
+# ===== Stato locale dei tool =====
+.tokensave/
+
 # ===== Contenuti caricati (non referenziati dalla pagina) =====
 uploads/
