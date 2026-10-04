@@ -6,7 +6,10 @@ Sito one-page, in italiano. Nessun build, nessun package manager. Git per il ver
 
 - `Anna Patanella - Sito.dc.html` — **l'unico file da modificare.** Markup + stile + logica.
 - `support.js` — runtime `dc-runtime` generato. **Non modificare** (header: "GENERATED … do not edit").
-- `assets/anna-patanella.jpg` — foto hero (900×1125, 4:5).
+- `assets/anna-patanella.jpg` — foto hero (900×1125, 4:5) + `anna-patanella-450.webp` / `-900.webp` per `srcset`.
+- `index.html` — redirect alla pagina (per GitHub Pages); `.nojekyll` evita il processing Jekyll.
+- `robots.txt`, `sitemap.xml` — SEO, dominio `https://annapatanellapsicologa.it/`. In produzione l'HTML va servito
+  come `index.html` alla radice (canonical e sitemap puntano a `/`).
 - `uploads/` — materiale caricato, non referenziato dalla pagina.
 - `.thumbnail` — anteprima generata, ignorare.
 
@@ -24,22 +27,28 @@ Sito one-page, in italiano. Nessun build, nessun package manager. Git per il ver
 ## Struttura pagina (ancore)
 
 `#inizio` hero · `#percorsi` · `#anna` (sfondo verde scuro) · `#primo-colloquio` (+ FAQ) ·
-`#contatti` con `#modulo` · footer. Header sticky 72px → ogni sezione ha `scroll-margin-top:72px`.
+`#contatti` con `#modulo` · footer. Header sticky (min 80px) → ogni sezione e `#modulo` hanno `scroll-margin-top:96px`.
 Breakpoint unico: `wide = innerWidth >= 960` (menu mobile `#menu-mobile` sotto).
 
 ## Design
 
 - Font: **Newsreader** (titoli, peso 300) + **Hanken Grotesk** (testo 17px/1.65), da Google Fonts.
-- Palette: fondo `#FAF7F1`, testo `#24231E`, verde `#3E4C3A` / scuro `#2F3A2C`, sabbia `#EFE8DC` `#E9E0D0`,
-  bordi `#D6CAB4` `#EAE2D4`, secondario `#6B665A`, errore `#B4533C`.
+- Palette (salvia): fondo `#F8F9F5`, testo `#24231E`, verde `#315D50` / hover `#426B5B` / scuro `#203F36`,
+  superfici `#EFF3EC` `#EAF0E8` `#DEE9D9`, bordi `#DCE3D8` `#C9D6C6`, secondario `#5A625B` `#6B665A`,
+  footer `#24231E`, errore `#9A3B26`.
 - Pulsanti a pillola (`border-radius:999px`) con freccia → ruotata e riempimento animato (`hover(k)`).
-- Mantieni: `prefers-reduced-motion`, skip link "Vai al contenuto", `:focus-visible`, `aria-*` su menu/FAQ/modulo.
+- Target touch ≥44px: per link testuali usa `display:inline-flex;align-items:center;min-height:44px;margin:-11px 0`
+  (area più grande, layout invariato).
+- SEO statica nel `<head>` reale (fuori da `<x-dc>`): canonical, Open Graph, JSON-LD `Person` + `MedicalBusiness`.
+  Se cambi contatti/dati, aggiorna anche il JSON-LD.
+- Mantieni: `lang="it"`, `prefers-reduced-motion`, skip link "Vai al contenuto", `:focus-visible`, `aria-*` su menu/FAQ/modulo.
 - Tono dei testi: caldo, sobrio, seconda persona singolare ("tu").
 
 ## Contatti (usati in più punti — aggiornali tutti)
 
 Tel/WhatsApp `+39 392 503 5002` (`tel:+393925035002`, `wa.me/393925035002`) ·
-email `annapatanellapsicologa@gmail.com`.
+email `annapatanellapsicologa@gmail.com` · Albo Lazio n. 22416 · P. IVA 16124471000.
+Compaiono in: header/hero CTA, `#contatti`, footer, JSON-LD nel `<head>`.
 
 ## Da completare
 
@@ -51,4 +60,5 @@ Lista completa con checkbox in `TODO.md` — spunta le voci man mano che le chiu
 
 ## Anteprima
 
-Aprire l'HTML nel browser (serve `support.js` accanto). Verificare a 375px e ≥960px.
+Servire la cartella (`python -m http.server`) e aprire l'HTML; serve `support.js` accanto. Verificare a 375px e ≥960px
+(Chrome su Windows non scende sotto ~580px: testare 375 dentro un `<iframe>` largo 375).

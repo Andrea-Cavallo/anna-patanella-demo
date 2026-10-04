@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://annapatanellapsicologa.it/sitemap.xml
