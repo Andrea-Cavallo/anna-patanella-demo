@@ -33,9 +33,9 @@ Breakpoint unico: `wide = innerWidth >= 960` (menu mobile `#menu-mobile` sotto).
 ## Design
 
 - Font: **Newsreader** (titoli, peso 300) + **Hanken Grotesk** (testo 17px/1.65), da Google Fonts.
-- Palette (salvia): fondo `#F8F9F5`, testo `#24231E`, verde `#315D50` / hover `#426B5B` / scuro `#203F36`,
-  superfici `#EFF3EC` `#EAF0E8` `#DEE9D9`, bordi `#DCE3D8` `#C9D6C6`, secondario `#5A625B` `#6B665A`,
-  footer `#24231E`, errore `#9A3B26`.
+- Palette (avorio + verde): fondo `#FAF7F1`, testo `#24231E`, verde `#315D50` / hover `#426B5B` / scuro `#203F36`,
+  superfici sabbia `#F5F0E7` `#F3EDE2` `#EFE8DC`, bordi `#E6DDCC` `#D6CAB4`, secondario `#5A625B` `#6B665A`,
+  footer `#24231E`, errore `#9A3B26`. Niente livelli enormi/fixed animati: su iOS Safari diventano neri.
 - Pulsanti a pillola (`border-radius:999px`) con freccia → ruotata e riempimento animato (`hover(k)`).
 - Animazioni: keyframes globali `apBreathe` (sfondo fisso), `apMorph` (contorno foto). Effetti JS agganciati
   ad attributi (funzioni sopra `Component`, avviate da `startMotionEffects()`): `data-reveal="n"` comparsa
