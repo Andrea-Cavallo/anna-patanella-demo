@@ -44,16 +44,18 @@ desktop.
 - [x] **Target touch comodi** — ogni elemento toccabile (link, pulsanti, voci del menu, FAQ) ≥44×44px
       e con spazio sufficiente tra loro.
       _Logo, link delle card, contatti e footer portati a ≥44px; restano più bassi solo i link dentro il testo (eccezione WCAG 2.5.8)._
-- [ ] **CTA e contatti a portata di pollice** — i pulsanti principali (telefono, WhatsApp, modulo)
+- [x] **CTA e contatti a portata di pollice** — i pulsanti principali (telefono, WhatsApp, modulo)
       grandi, a tutta larghezza quando serve e raggiungibili senza sforzo.
+      _CTA dell'hero a tutta larghezza su mobile (60px), contatti come schede tappabili da 64px._
 - [x] **Header sticky non invasivo** — su mobile il menu non copre i titoli; verificare
       `scroll-margin-top` su tutte le ancore e che il menu mobile sia fluido e accessibile.
       _`scroll-margin-top:96px` su tutte le sezioni e su `#modulo`._
 - [x] **Immagini responsive** — `max-width:100%`, `height:auto`, `aspect-ratio` per evitare salti di
       layout (CLS); dove possibile `srcset`/`sizes` e formati WebP/AVIF.
       _`aspect-ratio`, `width/height`, `srcset` WebP 450/900w (fallback JPG), preload con `imagesrcset`._
-- [ ] **Modulo ottimizzato mobile** — campi a tutta larghezza, `font-size` ≥16px sugli input, layout
+- [x] **Modulo ottimizzato mobile** — campi a tutta larghezza, `font-size` ≥16px sugli input, layout
       in colonna, messaggi di errore visibili vicino al campo.
+      _Input 52px a 17px, errori sotto il campo con `aria-describedby`, validazione al blur._
 - [x] **Animazioni fluide e leggere** — transizioni morbide, rispettando `prefers-reduced-motion`;
       niente micro-jank o scatti durante lo scroll.
       _Solo `transform`/`opacity`, eventi throttled con `requestAnimationFrame`, effetti mouse solo con puntatore `mouse`; tutto spento con reduced motion._

@@ -19,6 +19,14 @@ Il formato segue [Keep a Changelog](https://keepachangelog.com/it/1.1.0/) e il p
   organico animato della foto, comparsa progressiva allo scroll, schede con alone e lieve inclinazione,
   curve fluide attorno alla sezione verde scura, pulsanti magnetici.
 
+### Cambiato
+
+- Nuovo design completo, definito con la skill ui-ux-pro-max (`design-system/anna-patanella/MASTER.md`):
+  font Lora + Nunito Sans, colori come token CSS, accento argilla, icone SVG al posto dei simboli unicode,
+  striscia di credenziali sotto l'hero, contatti come schede tappabili, sezione "Chi sono" tra due curve.
+- Modulo: validazione al blur, messaggi d'errore più chiari, pulsante disattivato con stato visibile.
+- Movimento più sobrio: comparse brevi (520ms, stagger 50ms), aloni dell'hero compatibili con iOS.
+
 ### Da completare
 
 - Modulo contatti: attualmente simulato, serve un backend/servizio (es. Formspree) e informativa privacy reale.

@@ -26,22 +26,34 @@ Sito one-page, in italiano. Nessun build, nessun package manager. Git per il ver
 
 ## Struttura pagina (ancore)
 
-`#inizio` hero · `#percorsi` · `#anna` (sfondo verde scuro) · `#primo-colloquio` (+ FAQ) ·
-`#contatti` con `#modulo` · footer. Header sticky (min 80px) → ogni sezione e `#modulo` hanno `scroll-margin-top:96px`.
+`#inizio` hero · striscia "In breve" (credenziali) · `#percorsi` · `#anna` "Chi sono" (verde scuro tra due curve) · `#primo-colloquio` (+ FAQ) ·
+`#contatti` (sabbia) con `#modulo` · footer. Header sticky (min 80px) → ogni sezione e `#modulo` hanno `scroll-margin-top:96px`.
 Breakpoint unico: `wide = innerWidth >= 960` (menu mobile `#menu-mobile` sotto).
 
 ## Design
 
-- Font: **Newsreader** (titoli, peso 300) + **Hanken Grotesk** (testo 17px/1.65), da Google Fonts.
-- Palette (avorio + verde): fondo `#FAF7F1`, testo `#24231E`, verde `#315D50` / hover `#426B5B` / scuro `#203F36`,
-  superfici sabbia `#F5F0E7` `#F3EDE2` `#EFE8DC`, bordi `#E6DDCC` `#D6CAB4`, secondario `#5A625B` `#6B665A`,
-  footer `#24231E`, errore `#9A3B26`. Niente livelli enormi/fixed animati: su iOS Safari diventano neri.
-- Pulsanti a pillola (`border-radius:999px`) con freccia → ruotata e riempimento animato (`hover(k)`).
-- Animazioni: keyframes globali `apBreathe` (sfondo fisso), `apMorph` (contorno foto). Effetti JS agganciati
-  ad attributi (funzioni sopra `Component`, avviate da `startMotionEffects()`): `data-reveal="n"` comparsa
-  allo scroll (n = ritardo a gradini), `data-glow` alone + inclinazione (`--gx --gy --go --rx --ry --ty`),
+Fonte unica delle decisioni: `design-system/anna-patanella/MASTER.md` (creato con la skill ui-ux-pro-max).
+
+- Font: **Lora** (titoli, peso 500, corsivo 400 per gli accenti) + **Nunito Sans** (testo 17px/1.7), da Google Fonts.
+- Colori **solo come token** CSS definiti su `:root` nel `<style>` globale (`var(--primary)`, `var(--sand)`…):
+  non scrivere hex nuovi negli stili inline. Avorio `--bg #FAF7F1`, sabbia `--sand #F3EDE2`, verde `--primary #2F5446`,
+  verde scuro `--deep #1F3A31`, accento argilla `--clay #9C4F35`, testo `--ink #22211C` / `--muted #5E594F`.
+  Tutte le coppie testo/fondo sono ≥4.5:1. Ombre `--shadow-1` / `--shadow-2`, easing `--ease-out` / `--ease-fill`.
+- Icone: sprite SVG (`<symbol id="i-…">`, tracciati Lucide) in cima a `<x-dc>`; si usano con
+  `<svg …><use href="#i-nome"></use></svg>`. Mai emoji o frecce unicode come icone. Non mettere `{{ }}` dentro
+  l'attributo `d` di un `<path>`: il browser legge il template grezzo e registra errori in console.
+- Contenuti ripetuti (prove, percorsi, seduta, passaggi, contatti, FAQ) sono array nello script
+  (`PROOFS`, `PATHS`, `SESSION`, `STEPS`, `CONTACTS`, `FAQS`) resi con `<sc-for>`: modifica i testi lì.
+- Pulsanti a pillola (`border-radius:999px`) con freccia SVG ruotata e riempimento animato (`hover(k)`).
+  Un solo CTA primario per schermata; su mobile i CTA dell'hero vanno a tutta larghezza.
+- Animazioni: keyframes globali `apBreathe` (due aloni dentro l'hero, `overflow:hidden`), `apMorph` (contorno foto).
+  Effetti JS agganciati ad attributi (funzioni sopra `Component`, avviate da `startMotionEffects()`, token in `MOTION`):
+  `data-reveal="n"` comparsa allo scroll, `data-glow` alone + inclinazione (`--gx --gy --go --rx --ry --ty`),
   `data-magnet` pulsante magnetico (`--mx --my --ax --ay --fx`), `data-curve` curva tra sezioni (`--cs`).
   Gli effetti scrivono solo custom properties: non usare `transform` negli `style-hover` di questi elementi.
+  Niente livelli enormi `position:fixed` animati: su iOS Safari diventano neri.
+- Modulo: validazione al blur (solo campi compilati) e all'invio, messaggi sotto il campo con `aria-describedby`;
+  invio disattivato finché `SUBMIT_ENABLED` è `false`.
 - Target touch ≥44px: per link testuali usa `display:inline-flex;align-items:center;min-height:44px;margin:-11px 0`
   (area più grande, layout invariato).
 - SEO statica nel `<head>` reale (fuori da `<x-dc>`): canonical, Open Graph, JSON-LD `Person` + `MedicalBusiness`.
