@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Anna Patanella · Psicologa e psicoterapeuta a Roma e online</title>
+<meta name="description" content="Anna Patanella, psicologa e psicoterapeuta a Roma e online. Ansia e stress, difficoltà relazionali, cambiamenti e lutto. Psicoterapia Funzionale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap">
+<link rel="preload" as="image" href="assets/anna-patanella.jpg">
+<style>
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#FAF7F1;color:#24231E;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+h1,h2,h3,h4,p,ol,ul,dl,dd,figure{margin:0}
+a{color:#3E4C3A;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{color:#24231E}
+:focus-visible{outline:2px solid #3E4C3A;outline-offset:4px;border-radius:999px}
+input:focus-visible,textarea:focus-visible{border-radius:4px;outline-offset:1px}
+input,textarea,button{font:inherit;color:inherit}
+::selection{background:#D8DFD0}
+@keyframes apIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes apSpin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</helmet>
+
+<a href="#contenuto" style="position:absolute;left:-9999px;top:8px;z-index:100;background:#24231E;color:#FAF7F1;padding:10px 16px;border-radius:4px;text-decoration:none" style-focus="left:16px">Vai al contenuto</a>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(250,247,241,0.9);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid #EAE2D4">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,56px);height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#inizio" style="display:flex;align-items:baseline;gap:12px;text-decoration:none;color:#24231E;border-radius:4px">
+      <span style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:400;letter-spacing:-0.01em">Anna Patanella</span>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6B665A">Psicoterapeuta</span></sc-if>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Principale" style="display:flex;align-items:center;gap:40px">
+        <ul style="list-style:none;padding:0;display:flex;gap:32px;font-size:14px;letter-spacing:0.02em">
+          <li><a href="#anna" style="color:#24231E;text-decoration:none;padding:8px 0" style-hover="color:#4D5D47">Anna</a></li>
+          <li><a href="#percorsi" style="color:#24231E;text-decoration:none;padding:8px 0" style-hover="color:#4D5D47">Percorsi</a></li>
+          <li><a href="#primo-colloquio" style="color:#24231E;text-decoration:none;padding:8px 0" style-hover="color:#4D5D47">Primo colloquio</a></li>
+          <li><a href="#contatti" style="color:#24231E;text-decoration:none;padding:8px 0" style-hover="color:#4D5D47">Contatti</a></li>
+        </ul>
+        <a href="#modulo" onMouseEnter="{{ hv.hdr.on }}" onMouseLeave="{{ hv.hdr.off }}" onFocus="{{ hv.hdr.on }}" onBlur="{{ hv.hdr.off }}" style="position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;padding:0 6px 0 20px;border-radius:999px;border:1px solid #3E4C3A;background:#3E4C3A;color:#FAF7F1;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:0.01em">
+          <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#24231E;border-radius:999px;transform-origin:100% 50%;transform:scaleX({{ hv.hdr.fill }});transition:transform .55s cubic-bezier(.7,0,.2,1)"></span>
+          <span style="display:block;height:1.3em;line-height:1.3;overflow:hidden">
+            <span style="display:flex;flex-direction:column;transform:translateY({{ hv.hdr.y }});transition:transform .55s cubic-bezier(.7,0,.2,1)"><span>Richiedi un primo colloquio</span><span aria-hidden="true">Richiedi un primo colloquio</span></span>
+          </span>
+          <span aria-hidden="true" style="width:34px;height:34px;border-radius:999px;background:#E9E0D0;color:#2F3A2C;display:flex;align-items:center;justify-content:center;overflow:hidden">
+            <span style="display:block;font-size:16px;line-height:1;transform:rotate({{ hv.hdr.rot }});transition:transform .55s cubic-bezier(.7,0,.2,1)">→</span>
+          </span>
+        </a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="#modulo" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 5px 0 16px;border-radius:999px;background:#3E4C3A;color:#FAF7F1;text-decoration:none;font-size:14px;font-weight:500">Primo colloquio<span aria-hidden="true" style="width:34px;height:34px;border-radius:999px;background:#E9E0D0;color:#2F3A2C;display:flex;align-items:center;justify-content:center;font-size:15px;transform:rotate(-45deg)">→</span></a>
+        <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="menu-mobile" aria-label="{{ menuLabel }}" style="width:44px;height:44px;border:1px solid #D6CAB4;background:transparent;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+          <span aria-hidden="true" style="display:block;width:16px;height:1px;background:#24231E;transition:transform .3s;transform:{{ bar1 }}"></span>
+          <span aria-hidden="true" style="display:block;width:16px;height:1px;background:#24231E;transition:transform .3s;transform:{{ bar2 }}"></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav id="menu-mobile" aria-label="Principale" style="border-top:1px solid #EAE2D4;padding:8px clamp(20px,5vw,56px) 24px;background:#FAF7F1;animation:apIn .3s ease both">
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:30px">
+        <li><a href="#anna" onClick="{{ closeMenu }}" style="display:block;padding:12px 0;color:#24231E;text-decoration:none;border-bottom:1px solid #EFE8DC">Anna</a></li>
+        <li><a href="#percorsi" onClick="{{ closeMenu }}" style="display:block;padding:12px 0;color:#24231E;text-decoration:none;border-bottom:1px solid #EFE8DC">Percorsi</a></li>
+        <li><a href="#primo-colloquio" onClick="{{ closeMenu }}" style="display:block;padding:12px 0;color:#24231E;text-decoration:none;border-bottom:1px solid #EFE8DC">Primo colloquio</a></li>
+        <li><a href="#contatti" onClick="{{ closeMenu }}" style="display:block;padding:12px 0;color:#24231E;text-decoration:none">Contatti</a></li>
+      </ul>
+      <div style="display:flex;gap:10px;margin-top:16px;font-size:15px">
+        <a href="tel:+393925035002" style="height:44px;padding:0 18px;display:inline-flex;align-items:center;border:1px solid #D6CAB4;border-radius:999px;color:#24231E;text-decoration:none">Chiama</a>
+        <a href="https://wa.me/393925035002" style="height:44px;padding:0 18px;display:inline-flex;align-items:center;border:1px solid #D6CAB4;border-radius:999px;color:#24231E;text-decoration:none">WhatsApp</a>
+      </div>
+    </nav>
+  </sc-if>
+</header>
+
+<main id="contenuto">
+
+<section id="inizio" aria-labelledby="titolo-hero" style="max-width:1280px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(20px,5vw,56px) clamp(48px,6vw,88px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(36px,5vw,72px);scroll-margin-top:72px">
+  <div style="flex:1 1 340px;min-width:0;max-width:620px;display:flex;flex-direction:column;gap:24px;animation:apIn .7s ease both">
+    <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#4D5D47;font-weight:500"><span aria-hidden="true" style="width:32px;height:1px;background:#8C9A82"></span>Roma e online</p>
+    <h1 id="titolo-hero" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(48px,7vw,104px);line-height:0.95;letter-spacing:-0.035em">Anna Patanella<span style="display:block;font-style:italic;font-size:0.42em;letter-spacing:-0.01em;line-height:1.3;margin-top:0.35em;color:#4D5D47">psicologa e psicoterapeuta</span></h1>
+    <p style="font-size:clamp(18px,1.6vw,20px);line-height:1.6;max-width:30em;color:#3A3830;text-wrap:pretty">Accompagno adulti, coppie e piccoli gruppi nei momenti di ansia, di difficoltà nelle relazioni e di cambiamento. Lavoro con la Psicoterapia Funzionale, che dà spazio alla parola e a ciò che sente il corpo.</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 36px">
+      <a href="#modulo" onMouseEnter="{{ hv.hero.on }}" onMouseLeave="{{ hv.hero.off }}" onFocus="{{ hv.hero.on }}" onBlur="{{ hv.hero.off }}" style="position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:16px;height:60px;padding:0 7px 0 28px;border-radius:999px;background:#3E4C3A;color:#FAF7F1;text-decoration:none;font-size:16px;font-weight:500;letter-spacing:0.005em">
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#24231E;border-radius:999px;transform-origin:100% 50%;transform:scaleX({{ hv.hero.fill }});transition:transform .6s cubic-bezier(.7,0,.2,1)"></span>
+        <span style="display:block;height:1.3em;line-height:1.3;overflow:hidden">
+          <span style="display:flex;flex-direction:column;transform:translateY({{ hv.hero.y }});transition:transform .6s cubic-bezier(.7,0,.2,1)"><span>Richiedi un primo colloquio</span><span aria-hidden="true">Richiedi un primo colloquio</span></span>
+        </span>
+        <span aria-hidden="true" style="width:46px;height:46px;border-radius:999px;background:#E9E0D0;color:#2F3A2C;display:flex;align-items:center;justify-content:center;transform:scale({{ hv.hero.scale }});transition:transform .6s cubic-bezier(.7,0,.2,1)">
+          <span style="display:block;font-size:18px;line-height:1;transform:rotate({{ hv.hero.rot }});transition:transform .6s cubic-bezier(.7,0,.2,1)">→</span>
+        </span>
+      </a>
+      <a href="#anna" onMouseEnter="{{ hv.sec.on }}" onMouseLeave="{{ hv.sec.off }}" onFocus="{{ hv.sec.on }}" onBlur="{{ hv.sec.off }}" style="position:relative;display:inline-flex;align-items:center;gap:10px;height:44px;color:#24231E;text-decoration:none;font-weight:500;font-size:16px;border-radius:2px">
+        <span>Scopri come lavoro</span>
+        <span aria-hidden="true" style="display:block;font-size:17px;transform:translateX({{ hv.sec.x }}) rotate(90deg);transition:transform .45s cubic-bezier(.7,0,.2,1)">→</span>
+        <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:6px;height:1px;background:#C9BCA5"></span>
+        <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:6px;height:1px;background:#24231E;transform-origin:{{ hv.sec.origin }};transform:scaleX({{ hv.sec.line }});transition:transform .5s cubic-bezier(.7,0,.2,1)"></span>
+      </a>
+    </div>
+  </div>
+  <figure style="flex:0 1 380px;min-width:260px;position:relative;max-width:400px;width:100%;margin:0 auto;animation:apIn .9s .1s ease both">
+    <img src="assets/anna-patanella.jpg" width="900" height="1125" alt="Anna Patanella nel suo studio" fetchpriority="high" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:220px 220px 4px 4px;background:#ECE4D6">
+    <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;margin-top:16px;padding-top:14px;border-top:1px solid #DDD2C0;font-size:13px;letter-spacing:0.04em;color:#6B665A">
+      <span>Studio a Roma · Videochiamata</span>
+      <span>Albo Psicologi Lazio n. 22416</span>
+    </figcaption>
+  </figure>
+</section>
+
+<section id="percorsi" aria-labelledby="titolo-percorsi" style="scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);border-top:1px solid #EAE2D4;display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,80px)">
+    <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:18px;max-width:400px">
+      <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#4D5D47;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">01</span>Come posso aiutarti</p>
+      <h2 id="titolo-percorsi" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Le difficoltà che incontro <em style="font-style:italic;color:#4D5D47">più spesso</em></h2>
+      <p style="color:#5A564C;text-wrap:pretty">Percorsi individuali, di coppia e di gruppo, in studio o online. Se non ti ritrovi in queste descrizioni, <a href="#modulo">scrivimi comunque</a>.</p>
+    </div>
+    <ol style="list-style:none;padding:0;flex:2 1 480px;min-width:0;display:flex;flex-direction:column">
+      <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px 40px;padding:26px 0;border-top:1px solid #DDD2C0">
+        <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Ansia e stress</h3>
+        <p style="color:#3A3830;text-wrap:pretty">Preoccupazioni che non si fermano, tensione nel corpo, sonno disturbato, ritmi che non lasciano respiro. Cerchiamo di capire da dove nasce questa fatica e come renderla più gestibile.</p>
+      </li>
+      <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px 40px;padding:26px 0;border-top:1px solid #DDD2C0">
+        <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Difficoltà relazionali</h3>
+        <p style="color:#3A3830;text-wrap:pretty">Conflitti in coppia o in famiglia che si ripetono sempre uguali, distanze difficili da colmare, la sensazione di essere soli anche in mezzo agli altri.</p>
+      </li>
+      <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px 40px;padding:26px 0;border-top:1px solid #DDD2C0;border-bottom:1px solid #DDD2C0">
+        <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Cambiamenti e lutto</h3>
+        <p style="color:#3A3830;text-wrap:pretty">La perdita di una persona cara, la fine di una relazione, un lavoro che cambia. Momenti che chiedono tempo e uno spazio in cui poterli attraversare.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="anna" aria-labelledby="titolo-anna" style="background:#2F3A2C;color:#F3EEE4;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:clamp(40px,6vw,72px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(36px,6vw,88px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#C3CDB8;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">02</span>Anna e il suo approccio</p>
+        <h2 id="titolo-anna" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Mente e corpo, <em style="font-style:italic;color:#C3CDB8">nello stesso percorso</em></h2>
+        <p style="color:#E4DED2;text-wrap:pretty">Mi sono laureata in Psicologia alla LUMSA di Roma, dove ho poi frequentato un master in Psicomotricità, e mi sono specializzata in Psicoterapia Funzionale. Prima di accompagnare gli altri ho fatto un lungo percorso personale: è da lì che nasce il mio modo di stare accanto alle persone.</p>
+        <p style="color:#E4DED2;text-wrap:pretty">La Psicoterapia Funzionale considera pensieri, emozioni, respiro e postura come parti di un unico organismo. Quando qualcosa non va, lo sentiamo nella testa e nel corpo insieme. Per questo in seduta lavoriamo su entrambi.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="aspect-ratio:4/3;border-radius:4px;background:#3A4736;border:1px dashed #6E7D66;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;color:#C3CDB8;font-size:14px;letter-spacing:0.02em">Foto dello studio a Roma · da fornire</div>
+        <dl style="display:flex;flex-direction:column;font-size:14px;border-top:1px solid #4A5844">
+          <div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid #4A5844"><dt style="color:#AEB9A4">Albo</dt><dd style="color:#F3EEE4">Ordine degli Psicologi del Lazio, n. 22416</dd></div>
+          <div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid #4A5844"><dt style="color:#AEB9A4">Specializzazione</dt><dd style="color:#F3EEE4">Psicoterapia Funzionale, S.E.F.</dd></div>
+          <div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid #4A5844"><dt style="color:#AEB9A4">Formazione</dt><dd style="color:#F3EEE4">Laurea in Psicologia e Master di II livello in Psicomotricità, LUMSA</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:32px">
+      <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Cosa succede durante una seduta</h3>
+      <ol style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:32px 48px">
+        <li style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
+          <p style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:400;line-height:1.25">Si parte dal tuo racconto</p>
+          <p style="color:#D9D3C6;text-wrap:pretty">Mi dici cosa stai vivendo, con le parole e i tempi che senti tuoi. Non ci sono domande giuste da cui cominciare.</p>
+        </li>
+        <li style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
+          <p style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:400;line-height:1.25">Diamo ascolto anche al corpo</p>
+          <p style="color:#D9D3C6;text-wrap:pretty">Può capitare di fermarsi sul respiro, su una tensione o sulla postura. Sono proposte, mai obblighi: decidi tu fin dove andare.</p>
+        </li>
+        <li style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid #6E7D66">
+          <p style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:400;line-height:1.25">Il percorso si costruisce insieme</p>
+          <p style="color:#D9D3C6;text-wrap:pretty">Obiettivi e frequenza si concordano e si verificano strada facendo. Ciò che dici resta protetto dal segreto professionale.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="primo-colloquio" aria-labelledby="titolo-colloquio" style="scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:640px">
+      <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#4D5D47;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">03</span>Il primo colloquio</p>
+      <h2 id="titolo-colloquio" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Come iniziare, <em style="font-style:italic;color:#4D5D47">in tre passaggi</em></h2>
+    </div>
+    <ol style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:40px 56px">
+      <li style="display:flex;flex-direction:column;gap:12px">
+        <span aria-hidden="true" style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;color:#8C9A82">1</span>
+        <p style="font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.2;padding-top:12px;border-top:1px solid #DDD2C0">Mi scrivi</p>
+        <p style="color:#3A3830;text-wrap:pretty">Usa il modulo, mandami un messaggio su WhatsApp o chiamami. Bastano poche righe.</p>
+      </li>
+      <li style="display:flex;flex-direction:column;gap:12px">
+        <span aria-hidden="true" style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;color:#8C9A82">2</span>
+        <p style="font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.2;padding-top:12px;border-top:1px solid #DDD2C0">Ti ricontatto</p>
+        <p style="color:#3A3830;text-wrap:pretty">Ti rispondo personalmente per fissare il giorno e scegliere se incontrarci in studio o online.</p>
+      </li>
+      <li style="display:flex;flex-direction:column;gap:12px">
+        <span aria-hidden="true" style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;font-size:52px;line-height:1;color:#8C9A82">3</span>
+        <p style="font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.2;padding-top:12px;border-top:1px solid #DDD2C0">Ci conosciamo</p>
+        <p style="color:#3A3830;text-wrap:pretty">Mi racconti cosa ti porta qui e valutiamo insieme se e come proseguire. Il primo colloquio non ti impegna a continuare.</p>
+      </li>
+    </ol>
+    <div style="display:flex;flex-wrap:wrap;gap:16px clamp(28px,5vw,80px);padding-top:clamp(8px,2vw,16px)">
+      <h3 style="flex:1 1 300px;max-width:400px;font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-0.015em">Domande frequenti</h3>
+      <div style="flex:2 1 480px;min-width:0;border-top:1px solid #DDD2C0">
+        <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
+          <div style="border-bottom:1px solid #DDD2C0">
+            <h4 style="font-weight:inherit">
+              <button type="button" id="{{ q.btnId }}" onClick="{{ q.toggle }}" aria-expanded="{{ q.expanded }}" aria-controls="{{ q.panelId }}" style="width:100%;min-height:64px;padding:18px 0;background:none;border:0;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;cursor:pointer;font-family:'Newsreader',Georgia,serif;font-size:21px;font-weight:400;border-radius:4px;transition:color .2s" style-hover="color:#4D5D47">
+                <span>{{ q.q }}</span>
+                <span aria-hidden="true" style="position:relative;flex:none;width:34px;height:34px;border-radius:999px;border:1px solid #CFC2AB;background:{{ q.chipBg }};transition:background .3s">
+                  <span style="position:absolute;left:10px;right:10px;top:16px;height:1px;background:{{ q.chipFg }}"></span>
+                  <span style="position:absolute;left:10px;right:10px;top:16px;height:1px;background:{{ q.chipFg }};transform:rotate({{ q.rot }});transition:transform .35s cubic-bezier(.7,0,.2,1)"></span>
+                </span>
+              </button>
+            </h4>
+            <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
+              <div id="{{ q.panelId }}" role="region" aria-labelledby="{{ q.btnId }}" style="padding:0 52px 24px 0;color:#3A3830;display:flex;flex-direction:column;gap:10px;animation:apIn .3s ease both">
+                <p style="text-wrap:pretty">{{ q.a }}</p>
+                <sc-if value="{{ q.missing }}" hint-placeholder-val="{{ false }}">
+                  <p><span style="display:inline-block;background:#F0E6D3;border:1px dashed #B59E78;padding:2px 8px;border-radius:4px;font-size:14px;color:#5B4A2E">Da completare: {{ q.missing }}</span></p>
+                </sc-if>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti" aria-labelledby="titolo-contatti" style="background:#EFE8DC;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(36px,6vw,88px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <p style="display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#4D5D47;font-weight:500"><span style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:15px;letter-spacing:0;text-transform:none">04</span>Contatti</p>
+      <h2 id="titolo-contatti" style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-0.025em;text-wrap:balance">Scrivimi per un <em style="font-style:italic;color:#4D5D47">primo colloquio</em></h2>
+      <p style="color:#3A3830;text-wrap:pretty">Una breve richiesta basta: come preferisci essere ricontattato, se pensi allo studio o all’online e quando sei disponibile. Ti chiedo di non inserire dettagli personali o clinici nel modulo: ne parleremo a voce.</p>
+      <dl style="display:flex;flex-direction:column;border-top:1px solid #D6CAB4;margin-top:8px">
+        <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid #D6CAB4"><dt style="color:#6B665A;font-size:14px">Telefono</dt><dd><a href="tel:+393925035002" style="color:#24231E">+39 392 503 5002</a></dd></div>
+        <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid #D6CAB4"><dt style="color:#6B665A;font-size:14px">WhatsApp</dt><dd><a href="https://wa.me/393925035002?text=Buongiorno%20dottoressa%20Patanella%2C%20vorrei%20informazioni%20per%20un%20primo%20colloquio." style="color:#24231E">Scrivimi su WhatsApp</a></dd></div>
+        <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid #D6CAB4"><dt style="color:#6B665A;font-size:14px">Email</dt><dd style="overflow-wrap:anywhere"><a href="mailto:annapatanellapsicologa@gmail.com" style="color:#24231E">annapatanellapsicologa@gmail.com</a></dd></div>
+        <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid #D6CAB4"><dt style="color:#6B665A;font-size:14px">Studio</dt><dd style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">Roma, su appuntamento · anche online<span style="display:inline-block;background:#F0E6D3;border:1px dashed #B59E78;padding:2px 8px;border-radius:4px;font-size:14px;color:#5B4A2E">Da completare: zona dello studio</span></dd></div>
+      </dl>
+      <p style="font-size:14px;color:#5A564C;text-wrap:pretty">Questo sito non è un servizio di emergenza. In caso di urgenza chiama il 112 o rivolgiti al pronto soccorso più vicino.</p>
+    </div>
+
+    <div id="modulo" style="background:#FDFBF7;border-radius:6px;padding:clamp(24px,4vw,48px);box-shadow:0 1px 0 #E2D8C6, 0 24px 48px -32px rgba(47,58,44,0.25);scroll-margin-top:96px">
+      <div aria-live="polite">
+        <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+          <div id="esito-ok" tabindex="-1" style="display:flex;flex-direction:column;gap:16px;padding:16px 0;animation:apIn .4s ease both">
+            <span aria-hidden="true" style="width:48px;height:48px;border-radius:999px;background:#E3E9DD;color:#3E4C3A;display:flex;align-items:center;justify-content:center;font-size:20px">✓</span>
+            <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:32px;line-height:1.15">Richiesta inviata</h3>
+            <p style="color:#3A3830;text-wrap:pretty">Grazie {{ sentName }}. Ti risponderò personalmente all’indirizzo {{ sentEmail }}.</p>
+            <button type="button" onClick="{{ resetForm }}" style="align-self:flex-start;height:44px;padding:0 20px;background:none;border:1px solid #CFC2AB;border-radius:999px;color:#24231E;cursor:pointer;transition:background .25s" style-hover="background:#EFE8DC">Invia un’altra richiesta</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="background:#F7E8E3;border:1px solid #DDB7AC;color:#6E2E20;border-radius:4px;padding:14px 16px;margin-bottom:24px;font-size:15px;text-wrap:pretty">Non è stato possibile inviare la richiesta. Riprova tra poco oppure scrivimi direttamente a <a href="mailto:annapatanellapsicologa@gmail.com" style="color:#6E2E20">annapatanellapsicologa@gmail.com</a>.</div>
+        </sc-if>
+      </div>
+      <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" noValidate="{{ true }}" aria-busy="{{ isLoading }}" style="display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:30px;line-height:1.15;letter-spacing:-0.01em">Richiedi un primo colloquio</h3>
+            <p style="font-size:14px;color:#6B665A">Tutti i campi sono obbligatori, tranne il telefono.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <label for="f-nome" style="font-size:14px;font-weight:500;letter-spacing:0.01em">Nome</label>
+            <input id="f-nome" name="nome" autoComplete="name" value="{{ f.nome }}" onChange="{{ onNome }}" aria-invalid="{{ inv.nome }}" aria-describedby="e-nome" style="height:52px;padding:0 16px;border:1px solid {{ bd.nome }};border-radius:4px;background:#FFFFFF;font-size:17px;transition:border-color .2s" style-focus="border-color:#3E4C3A">
+            <sc-if value="{{ err.nome }}" hint-placeholder-val="{{ false }}"><p id="e-nome" style="font-size:14px;color:#9A3B26">{{ err.nome }}</p></sc-if>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <label for="f-email" style="font-size:14px;font-weight:500;letter-spacing:0.01em">Email</label>
+            <input id="f-email" name="email" type="email" autoComplete="email" inputMode="email" value="{{ f.email }}" onChange="{{ onEmail }}" aria-invalid="{{ inv.email }}" aria-describedby="e-email" style="height:52px;padding:0 16px;border:1px solid {{ bd.email }};border-radius:4px;background:#FFFFFF;font-size:17px;transition:border-color .2s" style-focus="border-color:#3E4C3A">
+            <sc-if value="{{ err.email }}" hint-placeholder-val="{{ false }}"><p id="e-email" style="font-size:14px;color:#9A3B26">{{ err.email }}</p></sc-if>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <label for="f-tel" style="font-size:14px;font-weight:500;letter-spacing:0.01em">Telefono <span style="font-weight:400;color:#6B665A">(facoltativo)</span></label>
+            <input id="f-tel" name="telefono" type="tel" autoComplete="tel" inputMode="tel" value="{{ f.tel }}" onChange="{{ onTel }}" style="height:52px;padding:0 16px;border:1px solid #D6CAB4;border-radius:4px;background:#FFFFFF;font-size:17px;transition:border-color .2s" style-focus="border-color:#3E4C3A">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <label for="f-msg" style="font-size:14px;font-weight:500;letter-spacing:0.01em">Messaggio</label>
+            <p id="h-msg" style="font-size:14px;color:#6B665A;margin-top:-2px">Ad esempio: studio o online, giorni e orari in cui sei disponibile.</p>
+            <textarea id="f-msg" name="messaggio" rows="4" maxLength="800" value="{{ f.msg }}" onChange="{{ onMsg }}" aria-invalid="{{ inv.msg }}" aria-describedby="h-msg e-msg" style="padding:14px 16px;border:1px solid {{ bd.msg }};border-radius:4px;background:#FFFFFF;font-size:17px;line-height:1.5;resize:vertical;min-height:120px;transition:border-color .2s" style-focus="border-color:#3E4C3A"></textarea>
+            <sc-if value="{{ err.msg }}" hint-placeholder-val="{{ false }}"><p id="e-msg" style="font-size:14px;color:#9A3B26">{{ err.msg }}</p></sc-if>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <label for="f-privacy" style="display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#3A3830;cursor:pointer;line-height:1.5">
+              <input id="f-privacy" type="checkbox" checked="{{ f.privacy }}" onChange="{{ onPrivacy }}" aria-invalid="{{ inv.privacy }}" aria-describedby="e-privacy" style="width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:#3E4C3A">
+              <span>Ho letto l’<a href="https://annapatanellapsicologa.it/privacy-policy/">informativa privacy</a> e acconsento a essere ricontattato/a.</span>
+            </label>
+            <sc-if value="{{ err.privacy }}" hint-placeholder-val="{{ false }}"><p id="e-privacy" style="font-size:14px;color:#9A3B26;padding-left:32px">{{ err.privacy }}</p></sc-if>
+          </div>
+          <button type="submit" disabled="{{ isLoading }}" onMouseEnter="{{ hv.sub.on }}" onMouseLeave="{{ hv.sub.off }}" onFocus="{{ hv.sub.on }}" onBlur="{{ hv.sub.off }}" style="position:relative;overflow:hidden;isolation:isolate;height:60px;border:0;border-radius:999px;background:#3E4C3A;color:#FAF7F1;font-weight:500;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 7px 0 28px;margin-top:4px">
+            <span aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:#24231E;border-radius:999px;transform-origin:100% 50%;transform:scaleX({{ hv.sub.fill }});transition:transform .6s cubic-bezier(.7,0,.2,1)"></span>
+            <span style="display:block;height:1.3em;line-height:1.3;overflow:hidden">
+              <span style="display:flex;flex-direction:column;transform:translateY({{ hv.sub.y }});transition:transform .6s cubic-bezier(.7,0,.2,1)"><span>{{ submitLabel }}</span><span aria-hidden="true">{{ submitLabel }}</span></span>
+            </span>
+            <span aria-hidden="true" style="width:46px;height:46px;border-radius:999px;background:#E9E0D0;color:#2F3A2C;display:flex;align-items:center;justify-content:center">
+              <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}"><span style="display:block;width:18px;height:18px;border-radius:999px;border:2px solid #B9AC94;border-top-color:#2F3A2C;animation:apSpin .8s linear infinite"></span></sc-if>
+              <sc-if value="{{ notLoading }}" hint-placeholder-val="{{ true }}"><span style="display:block;font-size:18px;line-height:1;transform:rotate({{ hv.sub.rot }});transition:transform .6s cubic-bezier(.7,0,.2,1)">→</span></sc-if>
+            </span>
+          </button>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#24231E;color:#D9D3C6;font-size:14px">
+  <div style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(20px,5vw,56px) 32px;display:flex;flex-direction:column;gap:40px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px 48px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <p style="font-family:'Newsreader',Georgia,serif;font-size:26px;font-weight:300;color:#F3EEE4;letter-spacing:-0.01em">Anna Patanella</p>
+        <p>Psicologa e psicoterapeuta a Roma e online</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#A39D90;margin-bottom:6px">Contatti</p>
+        <a href="tel:+393925035002" style="color:#F3EEE4;text-decoration:none" style-hover="color:#C3CDB8">+39 392 503 5002</a>
+        <a href="mailto:annapatanellapsicologa@gmail.com" style="color:#F3EEE4;text-decoration:none;overflow-wrap:anywhere" style-hover="color:#C3CDB8">annapatanellapsicologa@gmail.com</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#A39D90;margin-bottom:6px">Seguimi</p>
+        <a href="https://www.instagram.com/psicologa_anna_patanella/" style="color:#F3EEE4;text-decoration:none" style-hover="color:#C3CDB8">Instagram</a>
+        <a href="https://www.facebook.com/psicologaAnnaPatanella" style="color:#F3EEE4;text-decoration:none" style-hover="color:#C3CDB8">Facebook</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-top:24px;border-top:1px solid #3B3A33;font-size:13px;color:#A39D90">
+      <p>© 2026 Dott.ssa Anna Patanella · Albo degli Psicologi del Lazio n. 22416 · P. IVA 16124471000</p>
+      <div style="display:flex;gap:20px">
+        <a href="https://annapatanellapsicologa.it/privacy-policy/" style="color:#D9D3C6">Privacy</a>
+        <a href="https://annapatanellapsicologa.it/cookie-policy/" style="color:#D9D3C6">Cookie</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;formOutcome&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;success&quot;,&quot;error&quot;],&quot;default&quot;:&quot;success&quot;,&quot;tsType&quot;:&quot;'success' | 'error'&quot;,&quot;section&quot;:&quot;Modulo&quot;}}">
+class Component extends DCLogic {
+  state = {
+    w: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    menu: false, faq: 0, hov: {},
+    f: { nome: '', email: '', tel: '', msg: '', privacy: false },
+    err: {}, status: 'idle', sent: { nome: '', email: '' }
+  };
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth, menu: window.innerWidth >= 960 ? false : this.state.menu });
+    this.onK = e => { if (e.key === 'Escape' && this.state.menu) this.setState({ menu: false }); };
+    window.addEventListener('resize', this.onR);
+    window.addEventListener('keydown', this.onK);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onR);
+    window.removeEventListener('keydown', this.onK);
+    clearTimeout(this.t);
+  }
+  hover(k) {
+    const on = !!this.state.hov[k];
+    return {
+      on: () => this.setState(s => ({ hov: { ...s.hov, [k]: true } })),
+      off: () => this.setState(s => ({ hov: { ...s.hov, [k]: false } })),
+      fill: on ? 1 : 0, y: on ? '-50%' : '0%', rot: on ? '0deg' : '-45deg',
+      scale: on ? 1.06 : 1, x: on ? '3px' : '0px', line: on ? 1 : 0, origin: on ? '0% 50%' : '100% 50%'
+    };
+  }
+  setField(k, v) {
+    this.setState(s => {
+      const err = { ...s.err }; delete err[k];
+      return { f: { ...s.f, [k]: v }, err, status: s.status === 'error' ? 'idle' : s.status };
+    });
+  }
+  submit = e => {
+    e.preventDefault();
+    if (this.state.status === 'loading') return;
+    const f = this.state.f, err = {};
+    if (!f.nome.trim()) err.nome = 'Inserisci il tuo nome.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) err.email = 'Inserisci un indirizzo email valido.';
+    if (!f.msg.trim()) err.msg = 'Scrivi un breve messaggio.';
+    if (!f.privacy) err.privacy = 'Serve il consenso per poterti ricontattare.';
+    const first = ['nome', 'email', 'msg', 'privacy'].find(k => err[k]);
+    if (first) {
+      this.setState({ err });
+      setTimeout(() => { const el = document.getElementById('f-' + first); el && el.focus(); }, 0);
+      return;
+    }
+    this.setState({ status: 'loading', err: {} });
+    this.t = setTimeout(() => {
+      if ((this.props.formOutcome ?? 'success') === 'error') { this.setState({ status: 'error' }); return; }
+      this.setState({
+        status: 'success', sent: { nome: f.nome.trim(), email: f.email.trim() },
+        f: { nome: '', email: '', tel: '', msg: '', privacy: false }
+      });
+      setTimeout(() => { const el = document.getElementById('esito-ok'); el && el.focus({ preventScroll: true }); }, 50);
+    }, 1400);
+  };
+  renderVals() {
+    const s = this.state, wide = s.w >= 960, err = s.err;
+    const qs = [
+      { q: 'Quanto dura una seduta?', a: 'In genere tra 50 e 60 minuti. La frequenza si concorda insieme, in base alle tue esigenze.' },
+      { q: 'Quanto costa?', a: 'Le tariffe del primo colloquio e delle sedute successive saranno indicate qui.', missing: 'tariffa del primo colloquio e delle sedute' },
+      { q: 'Dove si trova lo studio?', a: 'A Roma. Si riceve su appuntamento.', missing: 'indirizzo o zona dello studio' },
+      { q: 'Come funzionano i colloqui online?', a: 'In videochiamata, con la stessa riservatezza dello studio. Servono una connessione stabile e un luogo tranquillo in cui parlare liberamente.' }
+    ];
+    const faqs = qs.map((x, i) => {
+      const open = s.faq === i;
+      return { ...x, missing: x.missing || '', open, expanded: open ? 'true' : 'false',
+        btnId: 'faq-b' + i, panelId: 'faq-p' + i, rot: open ? '0deg' : '90deg',
+        chipBg: open ? '#3E4C3A' : 'transparent', chipFg: open ? '#FAF7F1' : '#3E4C3A',
+        toggle: () => this.setState({ faq: open ? -1 : i }) };
+    });
+    const bd = k => err[k] ? '#B4533C' : '#D6CAB4';
+    const loading = s.status === 'loading';
+    return {
+      wide, narrow: !wide, menuOpen: !wide && s.menu,
+      menuExpanded: s.menu ? 'true' : 'false', menuLabel: s.menu ? 'Chiudi il menu' : 'Apri il menu',
+      bar1: s.menu ? 'translateY(3px) rotate(45deg)' : 'none',
+      bar2: s.menu ? 'translateY(-3px) rotate(-45deg)' : 'none',
+      toggleMenu: () => this.setState(st => ({ menu: !st.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      hv: { hdr: this.hover('hdr'), hero: this.hover('hero'), sec: this.hover('sec'), sub: this.hover('sub') },
+      faqs, f: s.f, err,
+      inv: { nome: err.nome ? 'true' : 'false', email: err.email ? 'true' : 'false', msg: err.msg ? 'true' : 'false', privacy: err.privacy ? 'true' : 'false' },
+      bd: { nome: bd('nome'), email: bd('email'), msg: bd('msg') },
+      onNome: e => this.setField('nome', e.target.value),
+      onEmail: e => this.setField('email', e.target.value),
+      onTel: e => this.setField('tel', e.target.value),
+      onMsg: e => this.setField('msg', e.target.value),
+      onPrivacy: e => this.setField('privacy', e.target.checked),
+      submit: this.submit,
+      isLoading: loading, notLoading: !loading,
+      isSuccess: s.status === 'success', isError: s.status === 'error', showForm: s.status !== 'success',
+      submitLabel: loading ? 'Invio in corso…' : 'Invia la richiesta',
+      sentName: s.sent.nome, sentEmail: s.sent.email,
+      resetForm: () => this.setState({ status: 'idle' })
+    };
+  }
+}
+</script>
+</body>
+</html>
