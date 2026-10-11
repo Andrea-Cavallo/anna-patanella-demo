@@ -1,60 +1,36 @@
-# Sito Anna Patanella — Psicologa e psicoterapeuta (Roma e online)
+# Anna Patanella — sito React
 
-Sito one-page, in italiano, per Anna Patanella, psicologa e psicoterapeuta.
-Argomenti trattati: ansia e stress, difficoltà relazionali, cambiamenti e lutto — Psicoterapia Funzionale.
+Ricostruzione locale in React 19 e Vite 8, con Motion, Base UI e Lucide. Design editoriale avorio/verde, fotografia WebP responsive, navigazione mobile e FAQ accessibili.
 
-Non ci sono build, package manager o dipendenze da installare: è un singolo file HTML servito da un
-runtime generato.
+## Avvio
 
-## Requisiti
-
-- Un browser moderno (Chrome, Firefox, Safari, Edge).
-- Nessun server: basta aprire il file HTML in locale.
-
-## Avvio rapido
-
-Apri `Anna Patanella - Sito.dc.html` nel browser (il file `support.js` deve restare accanto, nella
-stessa cartella). In alternativa servi la cartella con un server statico:
-
-```bash
-npx serve .
+```sh
+npm install
+npm run dev
 ```
 
-## Struttura del progetto
+Aprire l'indirizzo mostrato da Vite. Per la produzione:
 
-| File / cartella | Descrizione |
-| --- | --- |
-| `Anna Patanella - Sito.dc.html` | **L'unico file da modificare.** Markup + stile + logica. |
-| `support.js` | Runtime `dc-runtime` generato. **Non modificare.** |
-| `assets/anna-patanella.jpg` | Foto hero (900×1125, 4:5). |
-| `uploads/` | Materiale caricato, non referenziato dalla pagina (ignorato da git). |
-| `.thumbnail` | Anteprima generata dal tool, ignorata. |
+```sh
+npm run build
+npm run preview
+```
 
-## Formato `.dc.html`
+Pubblicare il contenuto di `dist/`, non i sorgenti. La build copia anche robots.txt, sitemap.xml e la fotografia usata nei metadati social. Il dominio canonical è quello già presente nel sito: verificare la configurazione effettiva quando si pubblica.
 
-Il contenuto vive dentro `<x-dc>`: il `<helmet>` raccoglie title, meta, font e `<style>` globale.
-Template con binding `{{ expr }}`, direttive `sc-if` / `sc-for`, stati `style-hover` / `style-focus`
-ed eventi camelCase React (`onClick`, `onSubmit`, …). Le props editabili sono dichiarate in
-`data-props` (JSON). Lo stile è **inline** su ogni elemento: segui il pattern esistente.
+## File
 
-Per i dettagli tecnici consulta `CLAUDE.md`.
+- `src/main.jsx`: contenuti, navigazione, FAQ, contatti.
+- `src/styles.css`: design condiviso, responsive, focus e reduced motion.
+- `src/components/annotated-text.tsx`: componente Componentry MIT adattato al CSS locale.
+- `vite.config.js`: build statica e copia dei file SEO.
+- `THIRD_PARTY_NOTICES.md`: fonti, licenze e valutazione dei cinque cataloghi.
+- `VERIFICATION.md`: verifiche e limiti della consegna.
 
-## Contatti
+La versione precedente in `Anna Patanella - Sito.dc.html` e `support.js` è conservata. Le modifiche già presenti in quel file e in TODO.md non sono state sovrascritte.
 
-| Canale | Valore |
-| --- | --- |
-| Telefono / WhatsApp | [`+39 392 503 5002`](tel:+393925035002) — [`wa.me/393925035002`](https://wa.me/393925035002) |
-| Email | [`annapatanellapsicologa@gmail.com`](mailto:annapatanellapsicologa@gmail.com) |
+## Contatti e dati
 
-## Anteprima
+Telefono/WhatsApp: +39 392 503 5002. Email: annapatanellapsicologa@gmail.com. Albo Psicologi Lazio n. 22416. P. IVA 16124471000. Dati ripresi dal sito precedente.
 
-Verificare a **375px** e **≥960px** (breakpoint unico del progetto).
-
-## Stato del progetto
-
-Vedi `TODO.md` per l'elenco delle attività rimaste (modulo contatti finto, FAQ con tariffe e indirizzo
-dello studio, informativa privacy).
-
-## Licenza
-
-Tutti i diritti riservati — vedi `LICENSE`.
+Non è presente un modulo che simula l'invio: i canali di contatto sono telefono, email e WhatsApp. Tariffe e indirizzo esatto non sono stati inventati. Il link privacy preesistente è conservato, ma l'informativa richiede verifica prima della pubblicazione. I font Google sono caricati da Google Fonts; se si desidera eliminare questa richiesta esterna, vanno distribuiti localmente.

@@ -67,3 +67,7 @@ Lista completa con checkbox in `TODO.md` — spunta le voci man mano che le chiu
 
 Servire la cartella (`python -m http.server`) e aprire l'HTML; serve `support.js` accanto. Verificare a 375px e ≥960px
 (Chrome su Windows non scende sotto ~580px: testare 375 dentro un `<iframe>` largo 375).
+
+## Migrazione React — 11 ottobre 2026
+
+La richiesta esplicita di ricostruire il sito da zero in React sostituisce le precedenti indicazioni sul singolo file dc-runtime. Il sito principale è ora `index.html` + `src/main.jsx` + `src/styles.css`; leggere README.md per i comandi. La versione precedente e support.js sono conservati. Non aggiornare il runtime generato.
