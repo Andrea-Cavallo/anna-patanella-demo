@@ -30,3 +30,4 @@ build/
 
 # ===== Contenuti caricati (non referenziati dalla pagina) =====
 uploads/
+__pycache__/

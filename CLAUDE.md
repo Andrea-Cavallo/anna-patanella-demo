@@ -63,6 +63,13 @@ Lista completa con checkbox in `TODO.md` — spunta le voci man mano che le chiu
   `formOutcome`). Per andare live serve un backend/servizio (es. Formspree) + informativa privacy reale.
 - FAQ con campo `missing`: mancano **tariffe** e **indirizzo dello studio**.
 
+## Skill UI/UX
+
+`.claude/skills/ui-ux-pro-max/` (da nextlevelbuilder/ui-ux-pro-max-skill, MIT, senza test). Usala per ogni modifica
+visiva o di interazione. Lo `SKILL.md` cita `${CLAUDE_PLUGIN_ROOT}`: qui lancia invece
+`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --domain <ux|style|color|typography|…>`
+dalla radice del repo. Stack del sito: HTML statico con stile inline (nessun framework CSS).
+
 ## Anteprima
 
 Servire la cartella (`python -m http.server`) e aprire l'HTML; serve `support.js` accanto. Verificare a 375px e ≥960px
