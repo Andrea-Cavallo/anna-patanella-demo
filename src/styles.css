@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 :root {
   font-family: "DM Sans", sans-serif;
+  color-scheme: only light;
   color: #283c34;
   background: #f7f6f0;
   font-synthesis: none;
